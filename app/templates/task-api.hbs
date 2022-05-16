@@ -1,0 +1,17 @@
+<h1>Task API</h1>
+
+<div class="row">
+  <div class="col">
+    <Card @onLoadItems={{(perform this.loadItems)}} />
+  </div>
+</div>
+
+<ul>
+{{#each this.items as |item|}}
+  <li>{{item.title}}</li>
+{{else if this.loadItems.isRunning}}
+  <Placeholder />
+{{else}}
+  Empty
+{{/each}}
+</ul>

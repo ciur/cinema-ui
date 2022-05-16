@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Loader card</h5>
+    <p class="card-text">Click on load button to load all items.</p>
+    <button
+      class="btn btn-primary {{if this.onLoadItems.isRunning 'disabled'}}"
+      {{on "click" (perform this.onLoadItems)}}>
+      Load
+    </button>
+    {{#if this.onLoadItems.isRunning}}
+      <Spinner />
+    {{/if}}
+  </div>
+</div>
